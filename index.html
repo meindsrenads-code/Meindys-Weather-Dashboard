@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Weather Dashboard</h1>
+        <div class="header-controls">
+            <button id="theme-toggle">☀️/🌙</button> <button id="unit-toggle">°C / °F</button> </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <form id="search-form">
+                <input type="text" id="city-input" placeholder="Search by city name..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="recent-searches">
+                </div>
+        </section>
+
+        <section class="weather-display-section">
+            <div id="loading-state" class="hidden">
+                <p>Loading weather data...</p> </div>
+            <div id="error-message" class="hidden">
+                <p>Error: Could not retrieve weather data.</p> </div>
+
+            <article id="current-weather" class="weather-card hidden">
+                <h2 id="location-name">City, Country</h2>
+                <p id="current-date"></p>
+                <div class="current-details">
+                    <img id="weather-icon" src="" alt="Weather condition icon">
+                    <div class="main-info">
+                        <p id="temperature">--°C</p>
+                        <p id="condition">--</p>
+                    </div>
+                </div>
+                <div class="additional-details">
+                    <p>Feels like: <span id="feels-like">--°C</span></p>
+                    <p>Humidity: <span id="humidity">--%</span></p>
+                    <p>Wind Speed: <span id="wind-speed">--m/s</span></p>
+                </div>
+            </article>
+
+            <section id="forecast-section" class="hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecast-container" class="forecast-grid">
+                    </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
